@@ -199,7 +199,7 @@ a:hover,
 /* nav */
 /*.navbar .nav{vertical-align: middle;text-align: center;}*/
 
-.nav>li>a{	
+.nav>li>a{
 	font-size: 0.7rem;
 	text-transform: uppercase;
 }
@@ -453,7 +453,7 @@ a:hover,
 	width: 1em;
 	height: 1em;
 	background-size: contain;
-	
+
 }
 
 .f-icon-mail{
@@ -493,7 +493,7 @@ input[type="text"]{
 .fu .btn{
 	font-size: 0.5rem;
 	padding: 4.5px 1px;
-	position: absolute;
+	/*position: absolute;*/
 	top: 2.5px;
 	right: 3px;
 }
@@ -511,7 +511,7 @@ input[type="text"]{
 .footer-ending .text{
 	display: inline-block;
 	vertical-align: top;
-	margin: 0;	
+	margin: 0;
 }
 
 .footer-ending .nav{
@@ -532,7 +532,7 @@ input[type="text"]{
 .footer-ending .nav a{
 	color: #747d8a;
 	font-weight: normal;
-	text-transform: capitalize;	
+	text-transform: capitalize;
 }
 
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
@@ -541,4 +541,3 @@ input[type="text"]{
 .swiper-wrapper .images{
 	margin-bottom: 50px;
 }
-

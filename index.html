@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>REEN</title>
-	
+
 	<link rel="stylesheet" href="index.css"  type="text/css">
 	<!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="swiper.css">
+    <!-- <link rel="stylesheet" href="swiper.css"> -->
 
 </head>
 <body>
@@ -101,32 +101,32 @@
 			            <div class="swiper-slide">
 							<form class="item item1" action="/echo" method="post">
 								<div class="head">
-									<div class="headline">made for designers</div> 
+									<div class="headline">made for designers</div>
 									<div class="text">Create your online portfolio in minutes with the professionally and lovingly designed REEN website template. Customize your site with versatile and easy to use features.</div>
 									<!-- button -->
 								<input type="submit" class="btn" value="get started now">
 								</div>
-							</form>	
+							</form>
 			            </div>
 			            <div class="swiper-slide">
 							<form class="item item1" action="/echo" method="post">
 								<div class="head">
-									<div class="headline">made for designers</div> 
+									<div class="headline">made for designers</div>
 									<div class="text">Create your online portfolio in minutes with the professionally and lovingly designed REEN website template. Customize your site with versatile and easy to use features.</div>
 									<!-- button -->
 								<input type="submit" class="btn" value="get started now">
 								</div>
-							</form>	
+							</form>
 			            </div>
 			            <div class="swiper-slide">
 							<form class="item item1" action="/echo" method="post">
 								<div class="head">
-									<div class="headline">made for designers</div> 
+									<div class="headline">made for designers</div>
 									<div class="text">Create your online portfolio in minutes with the professionally and lovingly designed REEN website template. Customize your site with versatile and easy to use features.</div>
 									<!-- button -->
 								<input type="submit" class="btn" value="get started now">
 								</div>
-							</form>	
+							</form>
 			            </div>
 			        </div>
 			        <!-- Add Pagination -->
@@ -224,26 +224,14 @@
 				        <!-- Add Pagination -->
 				        <div class="swiper-pagination-img"></div>
 				    </div>
-<!-- 
-					<div class="images">
-						<div class="image image1"></div>
-						<div class="image image2"></div>
-						<div class="image image3"></div>
-						<div class="image image4"></div>
-					</div>
-					<div class="pagination">
-						<a href="#carousel" class="t"></a>
-						<a href="#carousel" class="t"></a>
-						<a href="#carousel" class="t"></a>
-					</div>
- -->				</div>
+				</div>
 			</div>
 		</div>
 		<!-- get-in-touch -->
 		<form class="get-in-touch" action="/echo" method="post">
 			<div class="border">
 				<div class="head">
-					<div class="headline">Want to work with us?</div> 
+					<div class="headline">Want to work with us?</div>
 					<div class="text">Magnis modipsae que voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam.</div>
 					<!-- button -->
 					<input type="submit" class="btn" value="get in touch">
@@ -264,7 +252,7 @@
 				</a>
 			</div>
 			<!-- latest-works -->
-			<div class="lw modules">
+			<!-- <div class="lw modules">
 				<div class="headline">latest works</div>
 				<div class="thumbs">
 					<a href="#image1" class="thumb"><img src="img/car_image1.png"></a>
@@ -272,7 +260,7 @@
 					<a href="#image3" class="thumb"><img src="img/car_image3.png"></a>
 					<a href="#image4" class="thumb"><img src="img/car_image4.png"></a>
 				</div>
-			</div>
+			</div> -->
 			<!-- get-in-touch -->
 			<div class="git modules">
 				<div class="headline">get in touch</div>
@@ -296,12 +284,14 @@
 			</div>
 			<!-- free-updates -->
 			<div class="fu modules">
-				<div class="headline">free updates</div>
-				<div class="text">Conecus iure posae volor remped modis aut lor volor accabora incim resto explabo.</div>
-				<form class="subscribe"  action="/echo" method="post">
-					<input type="text" placeholder="Enter your email address">
+				<!-- <div class="headline">free updates</div> -->
+				<!-- <div class="text">Conecus iure posae volor remped modis aut lor volor accabora incim resto explabo.</div> -->
+				<form id="subscribe-form">
+					<input id="from_name" type="text" placeholder="Enter your name">
+					<input id="from_email" name="name_2" type="text" placeholder="Enter your email address">
+					<textarea id="message_html"></textarea>
 					<!-- button -->
-					<input type="submit" class="btn" value="subscribe">
+					<input id="form-submit" type="submit" class="btn" value="subscribe">
 				</form>
 			</div>
 		<!-- </div> -->
@@ -322,25 +312,52 @@
 		</div>
 	</div>
 
-	    <!-- Swiper JS -->
-    <script src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+	      emailjs.init("user_N5VHOjA0jIAsaxjNhi2aw");
+	   })();
+		 var form = document.getElementById("subscribe-form");
+		  form.addEventListener("submit", function (event) {
+		    event.preventDefault();
 
-    <!-- Initialize Swiper -->
-    <script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 30
-    });
+				var from_name = document.getElementById("from_name");
+				var from_email = document.getElementById("from_email");
+				var message_html = document.getElementById("message_html");
 
-    var swiper = new Swiper('.swiper-container-img', {
-        pagination: '.swiper-pagination-img',
-        paginationClickable: true,
-        spaceBetween: 30
-    });
-    </script>
+				var data = {
+					'from_name': from_name.value,
+					'from_email': from_email.value,
+					'message_html': message_html.value
+					};
+
+				emailjs.send("gmail", "our_site", data)
+				.then(function(response) {
+				   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+				}, function(err) {
+				   console.log("FAILED. error=", err);
+				});
+		  });
+	</script>
+
+  <!-- Swiper JS -->
+  <!-- <script src="js/swiper.min.js"></script> -->
+
+  <!-- Initialize Swiper -->
+  <!-- <script>
+  var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      spaceBetween: 30
+  });
+
+  var swiper = new Swiper('.swiper-container-img', {
+      pagination: '.swiper-pagination-img',
+      paginationClickable: true,
+      spaceBetween: 30
+  });
+  </script> -->
 </body>
 </html>
-
